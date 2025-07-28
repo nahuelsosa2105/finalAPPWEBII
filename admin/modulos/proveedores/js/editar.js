@@ -19,7 +19,7 @@ botonEliminar.addEventListener('click', async (evento) => {
     if (confirm('Eliminar registro?')) {
 
         const respuesta = await eliminarRegistro(
-            '/api/v1/productos/' + id
+            '/api/v1/proveedores/' + id
         );
         // Respuestas
         const { mensaje } = await respuesta.json();
@@ -43,7 +43,7 @@ formulario.addEventListener('submit', async (evento) => {
     const datosFormulario = procesarFormulario(formulario);
     // Enviar datos al back
     const respuesta = await altaRegistro(
-        '/api/v1/productos/' + id,
+        '/api/v1/proveedores/' + id,
         'PUT',
         datosFormulario
     );
@@ -52,5 +52,5 @@ formulario.addEventListener('submit', async (evento) => {
     mensajes.innerHTML = mensaje;
 });
 // Renderizar datos en formulario
-const resultado = await obtenerRegistros('/api/v1/productos/' + id);
+const resultado = await obtenerRegistros('/api/v1/proveedores/' + id);
 renderizarFormulario(resultado, formulario);

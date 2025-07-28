@@ -3,10 +3,10 @@ export async function renderizarFormulario(registros, formulario) {
         const datos = await registros.json()
         if (registros.ok) {
             // Llenar form
-            formulario.codigo.value = datos[0].codigo;
+           
             formulario.nombre.value = datos[0].nombre;
-            formulario.marca.value = datos[0].marca;
-            formulario.stock.value = datos[0].stock;
+            formulario.email.value = datos[0].email;
+            formulario.telefono.value = datos[0].telefono;
         } else {
             console.log('Registro no encontrado');
         }
@@ -17,25 +17,25 @@ export async function renderizarFormulario(registros, formulario) {
 }
 export async function renderizarListado(respuesta) {
     try {
-        const datosProductos = await respuesta.json()
+        const datosProveedores = await respuesta.json()
         if (respuesta.ok) {
-            const contenedorProductos =
-                document.getElementById('contenedor-productos');
+            const contenedorProveedores =
+                document.getElementById('contenedor-proveedores');
             let filas = '';
-            datosProductos.forEach((producto) => {
+            datosProveedores.forEach((proveedor) => {
                 filas += `
                     <tr>
-                        <td>${producto.codigo}</td>
-                        <td>${producto.nombre}</td>
-                        <td>${producto.marca}</td>
-                        <td>${producto.stock}</td>
-                        <td><a href="./editar.html?id=${producto.id}">Editar</a></td>
+                        
+                        <td>${proveedor.nombre}</td>
+                        <td>${proveedor.email}</td>
+                        <td>${proveedor.telefono}</td>
+                        <td><a href="./editar.html?id=${proveedor.id}">Editar</a></td>
                     </tr>
                 `;
             });
-            contenedorProductos.innerHTML = filas;
+            contenedorProveedores.innerHTML = filas;
         } else {
-            console.log(datosProductos.mensaje);
+            console.log(datosProveedores.mensaje);
         }
     } catch (error) {
         console.log(error);

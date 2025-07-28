@@ -11,16 +11,16 @@
     <header>
         <nav>
             <a href="/">Inicio</a>
-            <a href="./modulos/productos/index.html">Listado Productos</a>
-            <a href="./modulos/productos/alta.html">Alta Producto</a>
-            <a href="./modulos/proveedores/index.html">Listado Proveedores</a>
-            <a href="./modulos/proveedores/alta.html">Alta Proveedores</a>
+            <a href="/modulos/productos/index.html">Listado Productos</a>
+            <a href="/modulos/productos/alta.html">Alta Producto</a>
+            <a href="/modulos/proveedores/index.html">Listado Proveedores</a>
+            <a href="/modulos/proveedores/alta.html">Alta Proveedores</a>
         </nav>
     </header>
     <hr>
     <main>
 
-        <h1>Productos</h1>
+        <h1>Proveedores</h1>
         <h2>Editar</h2>
         <div class="eliminar-registro">
             <button class="boton-eliminar" id="eliminar-registro">Eliminar registro</button>
@@ -28,21 +28,18 @@
         <div class="mensajes" id="mensajes"></div>
         <section>
             <form id="form-editar">
-                <label for="codigo">
-                    CÓDIGO
-                    <input type="text" name="codigo" id="codigo" required>
-                </label>
+                
                 <label for="nombre">
                     NOMBRE
                     <input type="text" name="nombre" id="nombre" required>
                 </label>
-                <label for="marca">
-                    MARCA
-                    <input type="text" name="marca" id="marca" required>
+                <label for="email">
+                    EMAIL
+                    <input type="text" name="email" id="email" required>
                 </label>
-                <label for="stock">
-                    STOCK
-                    <input type="number" name="stock" id="stock" step="1" required>
+                <label for="telefono">
+                    TELEFONO
+                    <input type="number" name="telefono" id="telefono" step="1" required>
                 </label>
                 <button type="submit">Modificar</button>
             </form>
