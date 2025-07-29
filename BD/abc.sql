@@ -33,3 +33,19 @@ INSERT INTO productos (codigo, nombre, marca, stock) VALUES
 ('COOL-002', 'Pasta Térmica 1.5g', 'Arctic', 30),
 ('MON-001', 'Monitor LED 24" Full HD', 'LG', 8),
 ('MON-002', 'Monitor Curvo 27" 144Hz', 'Samsung', 6);
+
+-- Crear la tabla 'proveedores'
+CREATE TABLE proveedores (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    telefono VARCHAR(20) NOT NULL
+);
+
+-- Insertar proveedores 
+INSERT INTO proveedores (nombre, email, telefono) VALUES
+('Intel Argentina S.A.', 'contacto@intelarg.com', '541145678901'),
+('AMD Latinoamérica', 'ventas@amdlatam.com', '541147891122'),
+('NVIDIA Solutions S.R.L.', 'soporte@nvidiasol.com', '541141233344'),
+('Corsair Distribución', 'info@corsairdist.com', '541149997788'),
+('ASUS Proveedores S.A.', 'pedidos@asuspro.com', '541146785566');
